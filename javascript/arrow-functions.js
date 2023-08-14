@@ -1,15 +1,15 @@
 // Write an arrow function that returns 2.
-const giveMeTwo = undefined; // Replace `undefined` with your code
+const giveMeTwo = () => 2;
 
 // Write an arrow function that takes in a movie and returns '<movie> is the best movie
 // ever!' where <movie> is the argument passed into the function.
-const bestMovie = undefined; // Replace `undefined` with your code
+const bestMovie = (movie) => `${movie} is the best movie ever!`;
 
 // Write an arrow function called 'compareNums' that takes in 2 parameters,
 // which will be numbers.
 // The function should return the bigger number.
 // If the numbers are the same, just return the number.
-const compareNums = undefined; // Replace `undefined` with your code
+const compareNums = (num1, num2) => num1 > num2? num1: num2;
 
 const foods = [
   {
@@ -42,7 +42,9 @@ const foods = [
 // Calories can be calculated by multiplying carbs by 4, protein by 4, fat by 9,
 // and then adding the results together.
 function addCalories() {
-  // Replace this with your code
+  foods.forEach((food, i) => {
+    foods[i].calories = (food.carbs * 4) + (food.protein * 4) + (food.fat * 9);
+  });
   return foods;
 }
 
@@ -80,7 +82,10 @@ const products = [
 // Using the map method, make a copy of your products array with the prices reduced by 25%
 // and return it.
 function getSaleProducts() {
-  // Replace this with your code
+  return products.map(prod => {
+    prod.price *= .75;
+    return prod;
+  });
 }
 
 // A customer has placed an order - they want one of every product that has blue on it.
@@ -88,12 +93,13 @@ function getSaleProducts() {
 // to a new variable called 'blueProducts'.
 // (Hint: look up the array method 'includes' on MDN)
 function getBlueProducts() {
-  // Replace this with your code
+  return products.filter(prod => prod.color.includes("blue"));
 }
+// const blueProducts = getBlueProducts();
 
 // Get the total price of all the products using the reduce method.
 function getTotalPrice() {
-  // Replace this with your code
+  return products.reduce((acc, curr => acc + curr.price, 0));
 }
 
 export {

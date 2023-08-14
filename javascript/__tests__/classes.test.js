@@ -58,7 +58,7 @@ describe('Testing classes.js', () => {
   });
 
   describe('Testing the Square class', () => {
-    test('should be able to contruct a Square with a number to set the length and width', () => {
+    test('should be able to construct a Square with a number to set the length and width', () => {
       const square = new solution.Square(5);
       expect(square.length).toBe(5);
       expect(square.width).toBe(5);

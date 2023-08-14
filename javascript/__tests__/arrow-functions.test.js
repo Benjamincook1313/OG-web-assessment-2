@@ -47,7 +47,7 @@ describe('Testing arrow-functions.js', () => {
     expect(blueProducts[2].name).toBe('pants');
   });
 
-  test('getTotalPrice() returns the total price of all blue products using the .reduce method', () => {
+  test('getTotalPrice() returns the total price of all products using the .reduce method', () => {
     const reduceSpy = jest.spyOn(solution.products, 'reduce');
     const total = solution.getTotalPrice();
     expect(reduceSpy).toHaveBeenCalled();
